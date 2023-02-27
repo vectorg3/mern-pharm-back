@@ -14,9 +14,7 @@ import { check } from 'express-validator';
 
 mongoose.set('strictQuery', false);
 mongoose
-    .connect(
-        'mongodb+srv://admin:wwwwww@web-pharmacy.pg9307r.mongodb.net/web-pharmacy?retryWrites=true&w=majority'
-    )
+    .connect(MONGODB_URI)
     .then(() => {
         console.log('DB OK');
     })
