@@ -14,7 +14,7 @@ import { check } from 'express-validator';
 
 mongoose.set('strictQuery', false);
 mongoose
-    .connect(MONGODB_URI)
+    .connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('DB OK');
     })
