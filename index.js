@@ -33,7 +33,7 @@ app.get('/products', ProductController.getAll);
 app.post('/orders', checkAuth, orderCreateValidation, OrderController.create);
 app.get('/orders', OrderController.getAll);
 app.get('/orders/user', checkAuth, OrderController.getUserOrders);
-app.listen(4444, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
     if (err) {
         return console.log(err);
     }
