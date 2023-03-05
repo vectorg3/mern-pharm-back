@@ -30,6 +30,7 @@ app.post('/auth/login', loginValidation, UserController.login);
 app.post('/auth/register', registerValidation, UserController.register);
 app.get('/auth/me', checkAuth, UserController.getMe);
 app.get('/products', ProductController.getAll);
+app.get('/products/:id', ProductController.getOne);
 app.post('/orders', checkAuth, orderCreateValidation, OrderController.create);
 app.get('/orders', OrderController.getAll);
 app.get('/orders/user', checkAuth, OrderController.getUserOrders);
