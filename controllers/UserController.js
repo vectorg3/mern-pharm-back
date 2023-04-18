@@ -111,3 +111,14 @@ export const getMe = async (req, res) => {
         });
     }
 };
+export const uploadAvatar = async(req,res) => {
+    try {
+        const user = await UserModel.findById(req.userId);
+        user.avatar = `/images/${req.file.originalname}`;
+        await user.save();
+        return res.json({message: 'Аватар успешно загружен'});
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({message: 'Не удалось загрузить аватар'})
+    }
+}
