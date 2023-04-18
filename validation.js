@@ -16,11 +16,3 @@ export const registerValidation = [
         min: 3,
     }),
 ];
-
-export const orderCreateValidation = [
-    body('address', 'Неверный формат адреса').isLength({ min: 5 }).isString(),
-    body('phone', 'Неверный формат номера телефона')
-        .isLength({ min: 11 })
-        .isNumeric(),
-    body('orderList', 'Неверный формат товаров в корзине').isString(),
-];
